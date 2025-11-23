@@ -1,0 +1,15 @@
+# --- FRONTEND ---
+node_modules/
+dist/
+.vite/
+.vscode/
+
+# --- BACKEND ---
+backend/__pycache__/
+backend/venv/
+backend/*.pyc
+backend/db/*.db
+
+# --- ENV FILES ---
+.env
+backend/.env
