@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Loader2, Search } from 'lucide-react';
 import type { PatientData } from '../types';
+import toast from "react-hot-toast";
 
 interface InputCardProps {
   onAnalyze: (data: PatientData) => void;
@@ -21,22 +22,22 @@ function InputCard({ onAnalyze, isAnalyzing, language  }: InputCardProps) {
     e.preventDefault();
 
     if (!formData.symptoms.trim()) {
-      alert('Please enter patient symptoms');
+      toast.error("Please enter patient symptoms");
       return;
     }
 
     if (!formData.age || formData.age <= 0) {
-      alert('Please enter a valid age');
+      toast.error("Please enter a valid age");
       return;
     }
 
     if (!formData.weight || formData.weight <= 0) {
-      alert('Please enter a valid weight');
+      toast.error("Please enter a valid weight");
       return;
     }
 
     if (!formData.gender) {
-      alert('Please select gender');
+      toast.error("Please select a gender");
       return;
     }
 
